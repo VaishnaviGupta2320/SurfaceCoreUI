@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -41,9 +43,17 @@ fun MainScreen(){
     Surface(color = Color.DarkGray,
         modifier = Modifier.fillMaxSize())
     {
-       Row {
-           Horizontalcolorbar(Color.Magenta)
-           Horizontalcolorbar(Color.Green)
+       Column(modifier = Modifier.fillMaxSize(),
+           verticalArrangement =Arrangement.SpaceAround,
+           horizontalAlignment = Alignment.CenterHorizontally)
+       {
+           Row(modifier = Modifier.fillMaxWidth(),
+               horizontalArrangement = Arrangement.SpaceEvenly) {
+               Horizontalcolorbar(Color.Magenta)
+               Horizontalcolorbar(Color.Green)
+           }
+           //Horizontalcolorbar(Color.Magenta)
+          // Horizontalcolorbar(Color.Green)
            Horizontalcolorbar(Color.Blue)
            Horizontalcolorbar(Color.Cyan)
            Horizontalcolorbar(Color.Yellow)
@@ -74,7 +84,7 @@ fun Horizontalcolorbar(color: Color)
 {
     Surface(
         color = color,
-        modifier = Modifier.height(600.dp).width(80.dp)
+        modifier = Modifier.height(100.dp).width(100.dp)
     ){ }
 }
 
